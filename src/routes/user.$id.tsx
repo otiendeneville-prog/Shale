@@ -8,10 +8,13 @@ export const Route = createFileRoute("/user/$id")({
     if (Number(params.id) > 10) {
       throw notFound();
     }
+    const resp = { userName: "Neuville" };
+    return resp;
   },
 });
 
 function RouteComponent() {
   const { id } = Route.useParams();
-  return <div>Hello user with id {id}</div>;
+  const data = Route.useLoaderData();
+  return <div>Hello user with id {id} and with username(data.userName)</div>;
 }
