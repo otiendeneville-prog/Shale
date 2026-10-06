@@ -3,7 +3,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 export const Route = createFileRoute("/user/$id")({
   component: RouteComponent,
   notFoundComponent: () => <h1>This is a not a user page</h1>,
-
+  pendingComponent: () => <p>Loading users...</p>,
   loader: async ({ params }) => {
     const res = await fetch(
       `https://jsonplaceholder.typicode.com/users/${params.id}`,
