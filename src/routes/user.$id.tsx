@@ -4,21 +4,19 @@ export const Route = createFileRoute("/user/$id")({
   component: RouteComponent,
   notFoundComponent: () => <h1>This is a not a user page</h1>,
 
-  loader: ({ params }) => {
+  loader: async ({ params }) => {
     if (Number(params.id) > 10) {
       throw notFound();
     }
-    const resp = { userName: "Neuville" };
-    return resp;
+    const res = await fetch("https://jsonplaceholder.typicode.com/users");
+    const user = await res.json();
+    return { user };
+    console.log(`https://jsonplaceholder.typicode.com/users ${params.id}`);
   },
 });
 
 function RouteComponent() {
-  const { id } = Route.useParams();
   const data = Route.useLoaderData();
-  return (
-    <div>
-      Hello user with id {id} and with username{data.userName}
-    </div>
-  );
+  console.log(data);
+  return <div>Hello, this is a user:</div>;
 }
