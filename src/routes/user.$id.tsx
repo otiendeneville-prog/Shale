@@ -9,7 +9,7 @@ export const Route = createFileRoute("/user/$id")({
       `https://jsonplaceholder.typicode.com/users/${params.id}`,
     );
     if (res.ok) {
-      throw new Error("Faild to connect");
+      throw new Error("Faild to fetch users");
     }
     const user = await res.json();
     if (!user) {
