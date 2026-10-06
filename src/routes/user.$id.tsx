@@ -7,7 +7,7 @@ export const Route = createFileRoute("/user/$id")({
   loader: async ({ params }) => {
     const res = await fetch("https://jsonplaceholder.typicode.com/users");
     const user = await res.json();
-    if (!user.id) {
+    if (!user) {
       throw notFound();
     }
     return { user };
@@ -18,5 +18,10 @@ export const Route = createFileRoute("/user/$id")({
 function RouteComponent() {
   const data = Route.useLoaderData();
   console.log(data);
-  return <div>Hello, this is a user:</div>;
+  return (
+    <div>
+      Hello, this is a user:
+      <h1>Name: {data.user.name}</h1>
+    </div>
+  );
 }
