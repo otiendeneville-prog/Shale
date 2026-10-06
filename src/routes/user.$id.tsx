@@ -11,7 +11,6 @@ export const Route = createFileRoute("/user/$id")({
       throw notFound();
     }
     return { user };
-    console.log(`https://jsonplaceholder.typicode.com/users ${params.id}`);
   },
 });
 
@@ -22,6 +21,7 @@ function RouteComponent() {
     <div>
       Hello, this is a user:
       <h1>Name: {data.user.name}</h1>
+      <h1>Email:{data.user.email}</h1>
     </div>
   );
 }
