@@ -5,11 +5,11 @@ export const Route = createFileRoute("/user/$id")({
   notFoundComponent: () => <h1>This is a not a user page</h1>,
 
   loader: async ({ params }) => {
-    if (Number(params.id) > 10) {
-      throw notFound();
-    }
     const res = await fetch("https://jsonplaceholder.typicode.com/users");
     const user = await res.json();
+    if (!user.id) {
+      throw notFound();
+    }
     return { user };
     console.log(`https://jsonplaceholder.typicode.com/users ${params.id}`);
   },
