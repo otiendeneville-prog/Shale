@@ -29,6 +29,7 @@ function Header() {
           Linkedin
         </a>
         <Link to="/about">About</Link>
+        <Link to="/org/activities/posts">Posts</Link>
       </nav>
     </header>
   );

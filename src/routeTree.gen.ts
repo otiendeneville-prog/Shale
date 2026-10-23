@@ -8,10 +8,17 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
+import { createFileRoute } from '@tanstack/react-router'
+
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as UserIdRouteImport } from './routes/user.$id'
+import { Route as OrgActivitiesMeetupsIndexRouteImport } from './routes/org/activities/meetups/index'
+
+const OrgActivitiesPostsLazyRouteImport = createFileRoute(
+  '/org/activities/posts',
+)()
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +35,72 @@ const UserIdRoute = UserIdRouteImport.update({
   path: '/user/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OrgActivitiesPostsLazyRoute = OrgActivitiesPostsLazyRouteImport.update({
+  id: '/org/activities/posts',
+  path: '/org/activities/posts',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() =>
+  import('./routes/org/activities/posts.lazy').then((d) => d.Route),
+)
+const OrgActivitiesMeetupsIndexRoute =
+  OrgActivitiesMeetupsIndexRouteImport.update({
+    id: '/org/activities/meetups/',
+    path: '/org/activities/meetups/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/user/$id': typeof UserIdRoute
+  '/org/activities/posts': typeof OrgActivitiesPostsLazyRoute
+  '/org/activities/meetups/': typeof OrgActivitiesMeetupsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/user/$id': typeof UserIdRoute
+  '/org/activities/posts': typeof OrgActivitiesPostsLazyRoute
+  '/org/activities/meetups': typeof OrgActivitiesMeetupsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/user/$id': typeof UserIdRoute
+  '/org/activities/posts': typeof OrgActivitiesPostsLazyRoute
+  '/org/activities/meetups/': typeof OrgActivitiesMeetupsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/user/$id'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/user/$id'
+    | '/org/activities/posts'
+    | '/org/activities/meetups/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/user/$id'
-  id: '__root__' | '/' | '/about' | '/user/$id'
+  to:
+    | '/'
+    | '/about'
+    | '/user/$id'
+    | '/org/activities/posts'
+    | '/org/activities/meetups'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/user/$id'
+    | '/org/activities/posts'
+    | '/org/activities/meetups/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   UserIdRoute: typeof UserIdRoute
+  OrgActivitiesPostsLazyRoute: typeof OrgActivitiesPostsLazyRoute
+  OrgActivitiesMeetupsIndexRoute: typeof OrgActivitiesMeetupsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +126,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UserIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/org/activities/posts': {
+      id: '/org/activities/posts'
+      path: '/org/activities/posts'
+      fullPath: '/org/activities/posts'
+      preLoaderRoute: typeof OrgActivitiesPostsLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/org/activities/meetups/': {
+      id: '/org/activities/meetups/'
+      path: '/org/activities/meetups'
+      fullPath: '/org/activities/meetups/'
+      preLoaderRoute: typeof OrgActivitiesMeetupsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +147,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   UserIdRoute: UserIdRoute,
+  OrgActivitiesPostsLazyRoute: OrgActivitiesPostsLazyRoute,
+  OrgActivitiesMeetupsIndexRoute: OrgActivitiesMeetupsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
