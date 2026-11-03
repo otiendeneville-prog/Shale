@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { error } from "console";
 
 export const Route = createFileRoute("/org/activities/meetups/")({
   loader: async () => {
