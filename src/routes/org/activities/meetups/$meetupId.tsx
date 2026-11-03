@@ -17,6 +17,9 @@ function MeetupComponent() {
       <h3 className="text-4xl font-extrabold text-white  mb-4 tracking-tight">
         {meetups.title}
       </h3>
+      <p className="text-neutral-400 text-lg mb-8 leading-relaxed">
+        {meetups.description}
+      </p>
     </div>
   );
 }

@@ -25,7 +25,9 @@ function MeetupComponent() {
           >
             {meetup.title}
           </h3>
-          <p> {meetup.location}</p>
+          <p className="text-neutral-400 text-lg leading-relaxed">
+            {meetup.location}
+          </p>
         </Link>
       ))}
     </div>
