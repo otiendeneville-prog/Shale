@@ -12,5 +12,11 @@ export const Route = createFileRoute("/org/activities/meetups/$meetupId")({
 function MeetupComponent() {
   const meetups = Route.useLoaderData();
   console.log(meetups);
-  return <div>Hello "/org/activities/meetups/$meetupId"!</div>;
+  return (
+    <div className="max-w-2xl max-auto bg-neutral-900 border border-neutral-800 p-8 rounded-2xl shadow-2xl">
+      <h3 className="text-4xl font-extrabold text-white  mb-4 tracking-tight">
+        {meetups.title}
+      </h3>
+    </div>
+  );
 }
