@@ -6,6 +6,9 @@ export const Route = createFileRoute("/org/activities/meetups/")({
     const res = await fetch("http://localhost:3001/meetups");
     const events = await res.json();
     return events;
+    pendingComponent: () => (
+      <div className="animate-pulse">loading meetup data...</div>
+    );
   },
 });
 
