@@ -29,6 +29,12 @@ function MeetupComponent() {
       <p className="text-neutral-400 text-lg mb-8 leading-relaxed">
         {meetups.date}
       </p>
+      <p className="text-neutral-400 text-lg mb-8 leading-relaxed">
+        {meetups.tech}
+      </p>
+      <p className="text-neutral-400 text-lg mb-8 leading-relaxed">
+        {meetups.attendance}
+      </p>
     </div>
   );
 }
