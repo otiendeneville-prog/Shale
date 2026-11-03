@@ -13,7 +13,7 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <>
-      <div className="min-h-screen bg-neutral-950 text-white p-6">
+      <div className="min-h-screen bg-neutral-950 text-white p-6 bg-slate-950">
         <Header />
         <Outlet />
         <TanStackDevtools
