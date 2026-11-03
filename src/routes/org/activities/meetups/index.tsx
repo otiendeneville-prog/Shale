@@ -46,7 +46,6 @@ function MeetupComponent() {
         <>
           <h3>{meetup.title}</h3>
           <p>{meetup.location}</p>
-          <p>{meetup.city}</p>
         </>
       ))}
     </div>
