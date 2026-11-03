@@ -20,6 +20,15 @@ function MeetupComponent() {
       <p className="text-neutral-400 text-lg mb-8 leading-relaxed">
         {meetups.description}
       </p>
+      <p className="text-neutral-400 text-lg mb-8 leading-relaxed">
+        {meetups.location}
+      </p>
+      <p className="text-neutral-400 text-lg mb-8 leading-relaxed">
+        {meetups.city}
+      </p>
+      <p className="text-neutral-400 text-lg mb-8 leading-relaxed">
+        {meetups.date}
+      </p>
     </div>
   );
 }
