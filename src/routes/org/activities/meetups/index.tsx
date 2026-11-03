@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { error } from "console";
 
 export const Route = createFileRoute("/org/activities/meetups/")({
-  component: MeetupComponent,
   loader: async () => {
     const res = await fetch("http://localhost:3001/meetups");
     const events = await res.json();
@@ -9,7 +9,11 @@ export const Route = createFileRoute("/org/activities/meetups/")({
     pendingComponent: () => (
       <div className="animate-pulse">loading meetup data...</div>
     );
+    errorComponent: ({ error }) => (
+      <div className="text-red-500">{error.message}</div>
+    );
   },
+  component: MeetupComponent,
 });
 
 function MeetupComponent() {
