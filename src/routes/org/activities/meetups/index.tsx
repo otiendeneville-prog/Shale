@@ -49,7 +49,7 @@ function MeetupComponent() {
           params={{ meetupId: meetup.id.toString() }}
         >
           <h3
-            className="text-xl font-bold text-white  py-10 border
+            className="text-xl font-bold text-white  py-10 border hover:border-emerald-500 transition-colors
            rounded "
           >
             {meetup.title}
