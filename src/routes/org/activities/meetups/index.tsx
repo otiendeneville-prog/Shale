@@ -46,7 +46,7 @@ function MeetupComponent() {
         <Link
           key={meetup.id}
           to="meetup/$meetupId"
-          params={{ meetupId: meetup.id }}
+          params={{ $meetupId: meetup.id.toString() }}
         >
           <h3
             className="text-xl font-bold text-white  py-10 border
