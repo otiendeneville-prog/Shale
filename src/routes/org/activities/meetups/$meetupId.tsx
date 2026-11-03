@@ -10,5 +10,6 @@ export const Route = createFileRoute("/org/activities/meetups/$meetupId")({
 });
 
 function MeetupComponent() {
+  const meetups = Route.useLoaderData();
   return <div>Hello "/org/activities/meetups/$meetupId"!</div>;
 }
