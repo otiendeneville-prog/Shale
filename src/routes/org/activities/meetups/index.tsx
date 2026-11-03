@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/org/activities/meetups/")({
   component: MeetupComponent,
   loader: async () => {
-    const res = await fetch("http://locatlhost:3000/events");
+    const res = await fetch("http://localhost:3001/meetups");
     const events = await res.json();
     return events;
   },
