@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/org/activities/meetups/")({
   component: MeetupComponent,
@@ -43,10 +43,10 @@ function MeetupComponent() {
   return (
     <div>
       {meetups.map((meetup) => (
-        <>
+        <Link key={meetup.id} to="$meetupId">
           <h3>{meetup.title}</h3>
           <p>{meetup.location}</p>
-        </>
+        </Link>
       ))}
     </div>
   );
