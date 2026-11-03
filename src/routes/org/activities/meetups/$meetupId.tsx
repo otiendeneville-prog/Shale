@@ -6,9 +6,9 @@ export const Route = createFileRoute("/org/activities/meetups/$meetupId")({
     if (!res.ok) throw new Error("Meetup not found");
     return res.json();
   },
-  component: RouteComponent,
+  component: MeetupComponent,
 });
 
-function RouteComponent() {
+function MeetupComponent() {
   return <div>Hello "/org/activities/meetups/$meetupId"!</div>;
 }
