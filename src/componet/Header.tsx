@@ -37,6 +37,12 @@ function Header() {
           About
         </Link>
         <Link
+          to="/org/activities/meetups"
+          className="hover:text-amber-100 cursor-pointer"
+        >
+          meetups
+        </Link>
+        <Link
           to="/org/activities/posts"
           className="hover:text-amber-100 cursor-pointer"
         >
