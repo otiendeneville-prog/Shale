@@ -43,8 +43,8 @@ function MeetupComponent() {
   return (
     <div>
       {meetups.map((meetup) => (
-        <Link key={meetup.id} to="$meetupId">
-          <h3>{meetup.title}</h3>
+        <Link key={meetup.id} to="$meetupId" params={{ meetupId: meetup.id }}>
+          <h3 className="text-xl font-bold text-white">{meetup.title}</h3>
           <p>{meetup.location}</p>
         </Link>
       ))}
