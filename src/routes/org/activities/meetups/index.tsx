@@ -42,23 +42,21 @@ const meetups = [
 function MeetupComponent() {
   return (
     <div>
-       <h3>{title.meetup}</h3>
       {meetups.map((meetup) => (
-        // // // <Link
-        // // //   key={meetup.id}
-        // // //   to="meetup/$meetupId"
-        // // //   params={{ meetupId: meetup.id.toString() }}
-        // // // >
-        // //   <h3
-        // //     className="text-xl font-bold text-white px-3 py 4 border
-        // //    rounded "
-        // //   >
-        // //     {meetup.title}
-        // //   </h3>
-        //   <p>{meetup.location}</p>
-        // </Link>
-       
-      // ))}
+        <Link
+          key={meetup.id}
+          to="meetup/$meetupId"
+          params={{ meetupId: meetup.id }}
+        >
+          <h3
+            className="text-xl font-bold text-white  py-10 border
+           rounded "
+          >
+            {meetup.title}
+          </h3>
+          <p> {meetup.location}</p>
+        </Link>
+      ))}
     </div>
   );
 }
