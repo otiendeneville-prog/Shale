@@ -50,8 +50,12 @@ function MeetupComponent() {
   };
   return (
     <>
-      <div className="">
-        <div></div>
+      <div className="space-y-3">
+        <div className="text-center rounded-lg flex bg-neutral-900 p-4 ">
+          <p className="text-emerald-400 ">
+            Current Filter: City:{city || "All"}| Tech : {tech}
+          </p>
+        </div>
       </div>
       <div>
         {meetups.map((meetup) => (
