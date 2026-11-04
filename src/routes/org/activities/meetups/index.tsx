@@ -12,7 +12,21 @@ export const Route = createFileRoute("/org/activities/meetups/")({
   loader: async () => {
     const res = await fetch("http://localhost:3001/meetups");
     const events = await res.json();
+
+    if (deps.tech && deps.tech !== "all") {
+      event = events.filter((event: any) =>
+        event.tech.toLowerCase().includes(deps.tech.toLowerCase()),
+      );
+    }
     return events;
+
+    // if (deps.tech && deps.tech !== "all") {
+    //   events = events.filter((event: any) =>
+    //     event.tech.toLowerCase().includes(deps.tech.toLowerCase()),
+    //   );
+    // }
+    // return events;
+
     pendingComponent: () => (
       <div className="animate-pulse">loading meetup data...</div>
     );
