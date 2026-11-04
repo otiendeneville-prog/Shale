@@ -1,4 +1,9 @@
-import { createFileRoute, Link, useSearch } from "@tanstack/react-router";
+import {
+  createFileRoute,
+  Link,
+  useNavigate,
+  useSearch,
+} from "@tanstack/react-router";
 import { z } from "zod";
 
 const searchSchema = z.object({
@@ -38,7 +43,11 @@ export const Route = createFileRoute("/org/activities/meetups/")({
 function MeetupComponent() {
   const meetups = Route.useLoaderData();
   const { city, tech } = Route.useSearch();
-  console.log(city, tech);
+  const navigate = Route.useNavigate();
+
+  const handleFilter = () => {
+    navigate({ search: { city: "Bengaluru", tech: "FullStack" } });
+  };
   return (
     <div>
       {meetups.map((meetup) => (
