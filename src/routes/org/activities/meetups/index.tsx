@@ -1,4 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { z } from "zod";
+
+const searchSchema = z.object({
+  city: z.string().catch("all"),
+  tech: z.string().catch("all"),
+});
 
 export const Route = createFileRoute("/org/activities/meetups/")({
   loader: async () => {
