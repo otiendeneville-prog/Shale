@@ -20,18 +20,11 @@ export const Route = createFileRoute("/org/activities/meetups/")({
     }
     return events;
     if (deps.city && deps.city !== "all") {
-      event = events.filter((events: any) =>
-        event.city.toLoverCase().includes(deps.city.toLocaleLowerCase),
+      event = events.filter((event: any) =>
+        event.city.toLoverCase().includes(deps.city.toLocaleLowerCase()),
       );
+      return events;
     }
-
-    // if (deps.tech && deps.tech !== "all") {
-    //   events = events.filter((event: any) =>
-    //     event.tech.toLowerCase().includes(deps.tech.toLowerCase()),
-    //   );
-    // }
-    // return events;
-
     pendingComponent: () => (
       <div className="animate-pulse">loading meetup data...</div>
     );
