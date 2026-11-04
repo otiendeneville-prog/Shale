@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { z } from "zod";
+import { Schema } from "zod/v3";
 
 const searchSchema = z.object({
   city: z.string().catch("all"),
@@ -7,6 +8,7 @@ const searchSchema = z.object({
 });
 
 export const Route = createFileRoute("/org/activities/meetups/")({
+  validateSearch: searchSchema,
   loader: async () => {
     const res = await fetch("http://localhost:3001/meetups");
     const events = await res.json();
