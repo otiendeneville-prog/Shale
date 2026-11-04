@@ -55,7 +55,7 @@ function MeetupComponent() {
           <p className="text-emerald-400 ">
             Current Filter: City:{city || "All"}| Tech : {tech}
           </p>
-          <button>Register</button>
+          <button className="bg-neutral-50 py-4 px-5">Register</button>
         </div>
       </div>
       <div>
