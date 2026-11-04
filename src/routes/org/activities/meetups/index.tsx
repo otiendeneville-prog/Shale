@@ -49,24 +49,29 @@ function MeetupComponent() {
     navigate({ search: { city: "Bengaluru", tech: "FullStack" } });
   };
   return (
-    <div>
-      {meetups.map((meetup) => (
-        <Link
-          key={meetup.id}
-          to="/org/activities/meetups/$meetupId"
-          params={{ meetupId: meetup.id }}
-        >
-          <h3
-            className="text-xl font-bold text-white  py-10 border hover:border-emerald-500 transition-colors
-           rounded "
+    <>
+      <div className="">
+        <div></div>
+      </div>
+      <div>
+        {meetups.map((meetup) => (
+          <Link
+            key={meetup.id}
+            to="/org/activities/meetups/$meetupId"
+            params={{ meetupId: meetup.id }}
           >
-            {meetup.title}
-          </h3>
-          <p className="text-neutral-400 text-lg leading-relaxed">
-            {meetup.location}
-          </p>
-        </Link>
-      ))}
-    </div>
+            <h3
+              className="text-xl font-bold text-white  py-10 border hover:border-emerald-500 transition-colors
+           rounded "
+            >
+              {meetup.title}
+            </h3>
+            <p className="text-neutral-400 text-lg leading-relaxed">
+              {meetup.location}
+            </p>
+          </Link>
+        ))}
+      </div>
+    </>
   );
 }
