@@ -19,6 +19,11 @@ export const Route = createFileRoute("/org/activities/meetups/")({
       );
     }
     return events;
+    if (deps.city && deps.city !== "all") {
+      event = events.filter((events: any) =>
+        event.city.toLoverCase().includes(deps.city.toLocaleLowerCase),
+      );
+    }
 
     // if (deps.tech && deps.tech !== "all") {
     //   events = events.filter((event: any) =>
