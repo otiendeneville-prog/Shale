@@ -1,7 +1,8 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 
 export const Route = createLazyFileRoute("/org/activities/posts")({
-  component: RouteComponent,
+  defaultPreload: "intent",
+  component: PostComponent,
 });
 
 function RouteComponent() {
