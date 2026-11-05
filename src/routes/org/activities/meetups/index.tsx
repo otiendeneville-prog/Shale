@@ -46,7 +46,7 @@ function MeetupComponent() {
   const navigate = Route.useNavigate();
 
   const handleFilter = () => {
-    navigate({ search: { city: "Bengaluru", tech: "FullStack" } });
+    navigate({ search: { city: "Nairobi", tech: "React" } });
   };
   return (
     <>
