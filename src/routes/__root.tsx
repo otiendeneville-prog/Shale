@@ -5,6 +5,9 @@ import { auth } from "#/utils/auth";
 
 import "../styles.css";
 import Header from "#/componet/Header";
+interface MyRouteContext {
+  auth: typeof auth;
+}
 
 export const Route = createRootRoute({
   component: RootComponent,
