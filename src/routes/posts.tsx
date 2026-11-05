@@ -2,9 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/posts")({
   component: RouteComponent,
-});
-
-function RouteComponent() {
   loader: () => {
     return [
       {
@@ -23,5 +20,7 @@ function RouteComponent() {
         body: "How to connect an auto-generated type-safe client to your database seamlessly.",
       },
     ];
-  };
-}
+  },
+});
+
+function RouteComponent() {}
