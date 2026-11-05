@@ -5,5 +5,10 @@ export const Route = createLazyFileRoute("/org/activities/posts")({
 });
 
 function RouteComponent() {
-  return <div>Hello "/org/activities/posts"!</div>;
+  const posts = Route.useLoaderData();
+  return (
+    <div>
+      <h1 className="text-white  text-4xl font-extrbold mb-4">Posts</h1>
+    </div>
+  );
 }
