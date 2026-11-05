@@ -7,8 +7,16 @@ export const Route = createLazyFileRoute("/org/activities/posts")({
 function RouteComponent() {
   const posts = Route.useLoaderData();
   return (
-    <div>
-      <h1 className="text-white  text-4xl font-extrbold mb-4">Posts</h1>
-    </div>
+    <>
+      <div>
+        <h1 className="text-4xl font-extrbold mb-4">Posts</h1>
+      </div>
+      <ul className="mt-3">
+        post.map((post) =>)
+
+        <li className="text-2xl p-2 key={postId}>{post.title}</li>
+
+      </ul>
+    </>
   );
 }
