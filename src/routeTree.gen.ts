@@ -13,6 +13,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as PostsRouteImport } from './routes/posts'
 import { Route as UserIdRouteImport } from './routes/user.$id'
 import { Route as OrgActivitiesMeetupsIndexRouteImport } from './routes/org/activities/meetups/index'
 import { Route as OrgActivitiesMeetupsMeetupIdRouteImport } from './routes/org/activities/meetups/$meetupId'
@@ -29,6 +30,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PostsRoute = PostsRouteImport.update({
+  id: '/posts',
+  path: '/posts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const UserIdRoute = UserIdRouteImport.update({
@@ -59,6 +65,7 @@ const OrgActivitiesMeetupsMeetupIdRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/posts': typeof PostsRoute
   '/user/$id': typeof UserIdRoute
   '/org/activities/posts': typeof OrgActivitiesPostsLazyRoute
   '/org/activities/meetups/$meetupId': typeof OrgActivitiesMeetupsMeetupIdRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/posts': typeof PostsRoute
   '/user/$id': typeof UserIdRoute
   '/org/activities/posts': typeof OrgActivitiesPostsLazyRoute
   '/org/activities/meetups/$meetupId': typeof OrgActivitiesMeetupsMeetupIdRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/posts': typeof PostsRoute
   '/user/$id': typeof UserIdRoute
   '/org/activities/posts': typeof OrgActivitiesPostsLazyRoute
   '/org/activities/meetups/$meetupId': typeof OrgActivitiesMeetupsMeetupIdRoute
@@ -86,6 +95,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/posts'
     | '/user/$id'
     | '/org/activities/posts'
     | '/org/activities/meetups/$meetupId'
@@ -94,6 +104,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/posts'
     | '/user/$id'
     | '/org/activities/posts'
     | '/org/activities/meetups/$meetupId'
@@ -102,6 +113,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/posts'
     | '/user/$id'
     | '/org/activities/posts'
     | '/org/activities/meetups/$meetupId'
@@ -111,6 +123,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  PostsRoute: typeof PostsRoute
   UserIdRoute: typeof UserIdRoute
   OrgActivitiesPostsLazyRoute: typeof OrgActivitiesPostsLazyRoute
   OrgActivitiesMeetupsMeetupIdRoute: typeof OrgActivitiesMeetupsMeetupIdRoute
@@ -131,6 +144,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/posts': {
+      id: '/posts'
+      path: '/posts'
+      fullPath: '/posts'
+      preLoaderRoute: typeof PostsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/user/$id': {
@@ -167,6 +187,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  PostsRoute: PostsRoute,
   UserIdRoute: UserIdRoute,
   OrgActivitiesPostsLazyRoute: OrgActivitiesPostsLazyRoute,
   OrgActivitiesMeetupsMeetupIdRoute: OrgActivitiesMeetupsMeetupIdRoute,
