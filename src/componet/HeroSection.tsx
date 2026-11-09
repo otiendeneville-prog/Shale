@@ -35,6 +35,28 @@ export default function HeroSection() {
         alt="Neshville's wallpaper"
         className="w-full h-80 mt-14"
       />
+      <div className="flex items-center gap-6 pt-4 text-sm text-slate-400">
+        <a
+          href="https://github.com"
+          target="_blank"
+          className="hover:text-white transition"
+        >
+          GitHub ↗
+        </a>
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          className="hover:text-white transition"
+        >
+          LinkedIn ↗
+        </a>
+        <a
+          href="mailto:hello@example.com"
+          className="hover:text-white transition"
+        >
+          Email Me ↗
+        </a>
+      </div>
     </div>
   );
 }
