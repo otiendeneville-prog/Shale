@@ -1,7 +1,9 @@
 export default function HeroSection() {
   return (
     <div className="mb-100">
-      <h1 className="text-3xl font-bold text-neutral">About Neuville</h1>
+      <h1 className="text-3xl font-bold text-purple-300 animate-pulse">
+        About Neuville
+      </h1>
       <p className="text-xl text-gray-200">
         Hi, I'm Neuville, a full-stack developer specializing in building
         modern, scalable web applications. My core expertise lies in JavaScript
