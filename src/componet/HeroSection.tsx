@@ -1,8 +1,8 @@
-import wallpaper from "/component/assets/wallpaper.png";
+import wallpaper from "./assets/wallpaper.png";
 
 export default function HeroSection() {
   return (
-    <div className="mb-100 p-0">
+    <div className="mb-100 p-0 mt-12">
       <h1 className="text-3xl font-bold text-purple-300 animate-pulse">
         About Neuville
       </h1>
@@ -30,7 +30,11 @@ export default function HeroSection() {
         Neuville, a full-stack developer specializing in building modern,
         scalable web appliy.
       </p>
-      <img src="wallpaper.png" alt="Neshville's wallpaper" />
+      <img
+        src={wallpaper}
+        alt="Neshville's wallpaper"
+        className="w-full h-80 mt-14"
+      />
     </div>
   );
 }

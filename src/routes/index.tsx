@@ -36,7 +36,7 @@ function Home() {
             molestias quas ipsam, quaerat perferendis optio sapiente tenetur
             nisi ratione nesciunt! Eius.
           </p>
-          <div className="justify-center flex mr-30">
+          <div className="justify-center flex mr-30 mt-8">
             <button className="py-2 px-4 bg-emerald-700 text-white mr-5 rounded font-bold">
               view my work
             </button>
