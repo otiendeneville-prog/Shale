@@ -1,12 +1,38 @@
 export default function HeroSection() {
   return (
-    <div>
+    <div className="h-70">
       <h1 className="text-3xl font-bold text-neutral">About Neuville</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam veritatis
-        aliquam nam nesciunt accusantium minus error. Itaque saepe rerum
-        similique assumenda laborum, non est error! Illo ipsum dignissimos
-        aperiam
+        Hi, I'm Neuville, a full-stack developer specializing in building
+        modern, scalable web applications. My core expertise lies in JavaScript
+        and TypeScript, where I leverage React and the TanStack ecosystem to
+        create fast, type-safe user interfaces. On the backend, I build robust
+        APIs and server-side architectures using PHP, Laravel, and Python. Hi,
+        I'm Neuville, a full-stack developer specializing in building modern,
+        scalable web applications. My core expertise lies in JavaScript and
+        TypeScript, where I leverage React and the TanStack ecosystem to create
+        fast, type-safe user interfaces. On the backend, I build robust APIs and
+        server-side architectures using PHP, Laravel, and Python. Hi, I'm
+        Neuville, a full-stack developer specializing in building modern,
+        scalable web applications. My core expertise lies in JavaScript and
+        TypeScript, where I leverage React and the TanStack ecosystem to create
+        fast, type-safe user interfaces. On the backend, I build robust APIs and
+        server-side architectures using PHP, Laravel, and Python. Hi, I'm
+        Neuville, a full-stack developer specializing in building modern,
+        scalable web applications. My core expertise lies in JavaScript and
+        TypeScript, where I leverage React and the TanStack ecosystem to create
+        fast, type-safe user interfaces. On the backend, I build robust APIs and
+        server-side architectures using PHP, Laravel, and Python.Hi, I'm
+        Neuville, a full-stack developer specializing in building modern,
+        scalable web applications. My core expertise lies in JavaScript and
+        TypeScript, where I leverage React and the TanStack ecosystem to create
+        fast, type-safe user interfaces. On the backend, I build robust APIs and
+        server-side architectures using PHP, Laravel, and Python. Hi, I'm
+        Neuville, a full-stack developer specializing in building modern,
+        scalable web applications. My core expertise lies in JavaScript and
+        TypeScript, where I leverage React and the TanStack ecosystem to create
+        fast, type-safe user interfaces. On the backend, I build robust APIs and
+        server-side architectures using PHP, Laravel, and Python.
       </p>
     </div>
   );
