@@ -20,13 +20,13 @@ function Home() {
       <div className="flex min-h-screen w-full items-start pt-26 justify-center p-4">
         <div className="flex max-w-3xl flex-col p-8 font-light text-white">
           <h1 className="flex flex-wrap items-center font-mono text-4xl font-bold md:text-5xl">
-            <span className="animate-spin">Welcome To The Website&nbsp;</span>
-            <span className="ml-30 text-3xl text-purple-300">
+            <span className="animate-bounce">Welcome To The Website&nbsp;</span>
+            <span className="ml-30 text-3xl text-purple-300 animate-pulse">
               Neuville's Portfolio
             </span>
           </h1>
 
-          <p className="mt-4 text-sm font-medium leading-relaxed text-gray-300">
+          <p className="mt-4 text-sm font-medium leading-relaxed text-gray-300 hover:text-purple-400">
             This is a tracker App built using TanStack Router. Here we learn
             about static routing, Dynamic routing, nested routing, and data
             loading. Apart from this, we will also look at advanced concepts

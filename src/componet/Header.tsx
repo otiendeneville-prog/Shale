@@ -28,7 +28,7 @@ function Header() {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://ww.linkedin.com/in/tapasadhikary"
+          href="https://www.linkedin.com/mynetwork/network-manager/people-follow/?filterType=member"
           className="hover:text-amber-100 cursor-pointer"
         >
           Linkedin
