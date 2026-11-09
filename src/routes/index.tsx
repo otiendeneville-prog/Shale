@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import About from "#/componet/About.tsx";
 import { useNavigate } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-
+import HeroSection from "#/componet/HeroSection";
 export const Route = createFileRoute("/")({ component: Home });
 
 function Home() {
@@ -49,6 +49,7 @@ function Home() {
                 : `${3 - count} clicks left...`}
             </button>
           </div>
+          <HeroSection />
         </div>
       </div>
       <div className="w-full bg-slate-900 py-20 px-4">
