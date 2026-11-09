@@ -6,7 +6,7 @@ export default function HeroSection() {
       <h1 className="text-3xl font-bold text-purple-300 animate-pulse">
         About Neuville
       </h1>
-      <p className="text-xl">
+      <p>
         Hi, I'm Neuville, a full-stack developer specializing in building
         modern, scalable web applications. My core expertise lies in JavaScript
         and TypeScript, where I leverage React and the TanStack ecosystem to
